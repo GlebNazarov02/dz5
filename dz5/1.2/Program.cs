@@ -9,7 +9,7 @@
     int sum1 = 0;
     for (int i = 0;i<n;i++)
     {
-        if ((i % 2) != 0)
+        if ((i % 2) == 0)
         {
             sum1 = sum1 + array[i];
         } 
