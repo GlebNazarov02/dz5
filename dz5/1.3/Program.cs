@@ -1,15 +1,24 @@
-﻿void Mass(int n)
-{   
-    Console.WriteLine("Введите числа");
-    double[] array = new double[n];
-    for (int i = 0;i<n;i++)
-    {
-        array[i] = double.Parse(Console.ReadLine());
-    }
-    for (int i = 0;i<n;i++)
-    {
-        Console.Write($"{array[i]} ");
-    }
+﻿void Print(double [] arr)
+{
+    int size = arr.Length;
+
+    for (int i = 0; i < size; i++)
+        Console.Write($"{arr[i]} ");
+    Console.WriteLine();
+}
+
+double[] Mass(int size)
+{
+    Random rand = new Random(DateTime.Now.Millisecond);
+    double[] arr = new double[size];
+
+    for (int i = 0; i < size; i++)
+        arr[i] = rand.NextDouble() * 100;
+    return arr;
+}
+
+void Reshalka(double[] array,int n)
+{
     double max = array[0];
     double min = array[0];
     for (int i = 0;i<n;i++)
@@ -29,4 +38,6 @@
 }
 Console.WriteLine("Введите кол во");
 int s = int.Parse(Console.ReadLine());
-Mass(s);
+double[] newarr = Mass(s);
+Print(newarr);
+Reshalka(newarr,s);
